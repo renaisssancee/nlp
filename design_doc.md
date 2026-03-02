@@ -1,4 +1,4 @@
-# Design-Doc: CineMatch - Рекомендательный агент фильмов
+# Design-Doc - CineMatch: LLM-based Movie Recommendation System
 
 ---
 
