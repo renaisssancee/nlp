@@ -1,4 +1,4 @@
-#AI Movie Assistant — Film Recommendation & Discovery Agent
+# AI Movie Assistant — Film Recommendation and Discovery Agent
 
 LLM-based система для семантического поиска фильмов по описанию настроения,  
 жанра и предпочтений с объяснением рекомендаций.
@@ -29,9 +29,9 @@ AI Movie Assistant — это RAG-based система, которая:
 
 | Датасет | Источник | Размер | Назначение |
 |---|---|---|---|
-| IMDB Top 1000 Movies | Kaggle | ~1 000 фильмов | Основная база (RAG) |
-| IMDB Movie Reviews | Kaggle | ~50 000 рецензий | Обогащение контекста |
-| MovieLens Dataset | grouplens.org | ~60 000 фильмов | Расширение базы |
+| IMDB Top 1000 Movies | Kaggle | около 1 000 фильмов | Основная база (RAG) |
+| IMDB Movie Reviews | Kaggle | около 50 000 рецензий | Обогащение контекста |
+| MovieLens Dataset | grouplens.org | около 60 000 фильмов | Расширение базы |
 
 ---
 
