@@ -1,4 +1,4 @@
-# AI Movie Assistant — Film Recommendation and Discovery Agent
+# CineMatch: LLM-based Movie Recommendation System
 
 LLM-based система для семантического поиска фильмов по описанию настроения,  
 жанра и предпочтений с объяснением рекомендаций.
