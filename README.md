@@ -1,11 +1,11 @@
-# AI HR Assistant — Resume ↔ Job Matching Agent
+# AI HR Assistant - Resume to Job Matching Agent
 
 LLM-based система для семантического сопоставления резюме и вакансий  
 с выявлением skill gaps и генерацией рекомендаций.
 
 ---
 
-## 📌 Описание проекта
+## Описание проекта
 
 AI HR Assistant — это RAG-based система, которая:
 
@@ -21,7 +21,7 @@ AI HR Assistant — это RAG-based система, которая:
 
 - ML / NLP инженер — разработка retrieval + embeddings (Пахолкова Мария)
 - Backend инженер — API, интеграции (Цисарук Мария)
-- Product / UX — пользовательский сценарий и интерфейс
+- Product / UX — пользовательский сценарий и интерфейс (Смешкова Екатерина)
 
 ---
 
