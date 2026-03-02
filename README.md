@@ -19,7 +19,7 @@ AI HR Assistant — это RAG-based система, которая:
 
 ## Команда проекта
 
-- ML / NLP инженер — разработка retrieval + embeddings
+- ML / NLP инженер — разработка retrieval + embeddings (Пахолкова Мария)
 - Backend инженер — API, интеграции (Цисарук Мария)
 - Product / UX — пользовательский сценарий и интерфейс
 
