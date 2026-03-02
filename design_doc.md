@@ -336,29 +336,38 @@ User:
 
 | Риск | Вероятность | Влияние | Mitigation |
 |---|---|---|---|
-| Низкое качество retrieval на нишевых запросах | Средняя | Высокое | Hybrid search: BM25 + vector; обогащение тегами MovieLens |
-| Галлюцинации (выдуманные фильмы) | Средняя | Высокое | Similarity threshold + явный запрет в system prompt + output validation |
+| Низкое качество retrieval на нишевых запросах | Средняя | Высокое | Hybrid search: BM25 + vector; обогащение тегами MovieLens; Fallback на жанровый поиск при similarity < 0.3 |
+| Галлюцинации (выдуманные фильмы) | Средняя | Критическое | Similarity threshold + явный запрет в system prompt + output validation; LLM-judge для post-валидации ответов |
 | Rate limits / стоимость OpenAI API | Низкая | Среднее | Gemini Flash как fallback; кэширование частых запросов |
-| TMDB датасет неполный (5k фильмов) | Высокая | Среднее | Принимаем как ограничение, фиксируем в README |
+| Падение внешних API (OpenAI/Gemini недоступен) | Низкая | Высокое | Health check + retry с exponential backoff; Заглушка |
 | Плохой парсинг свободного запроса | Средняя | Среднее | Fallback на чистый vector search если Query Analyzer вернул null |
+
+**Непроверенные допущения:**
+
+- Качество sentence-transformers достаточно: предполагаем, что all-MiniLM-L6-v2 справится с семантическим поиском без fine-tuning на кино-домене
+- 10 секунд — приемлемое время ответа: пользователи готовы ждать качественную рекомендацию
+- Английские эмбеддинги + русские запросы: мультиязычность модели покроет семантический разрыв
+- MovieLens теги релевантны: пользовательские теги с MovieLens точно описывают настроение фильмов
+- 5000 фильмов — достаточный выбор: база покрывает 80%+ популярных запросов
 
 ---
 
 ## 9. Бюджет и ресурсы
 
-**Команда:** 2–4 человека
+**Команда:** 3 человека
 
 | Роль | Задачи |
 |---|---|
 | ML-инженер | Эмбеддинги, ChromaDB, retrieval pipeline, reranker |
 | NLP / Prompt Engineer | Query Analyzer, промпты, LLM-judge, метрики |
-| Fullstack (опционально) | Telegram-бот или Streamlit UI, логирование |
+| Backend Developer | Telegram-бот или Streamlit UI, логирование, error handling |
+| DevOps | Docker setup |
 
 **Технологии и стоимость:**
 
 | Ресурс | Стоимость |
 |---|---|
-| OpenAI API (GPT-4o-mini) | ~$3–7 на весь проект |
+| OpenAI API (GPT-4o-mini) | ~$10–15 на проект |
 | ChromaDB | Бесплатно (open-source) |
 | sentence-transformers | Бесплатно |
 | Hugging Face Spaces / Railway | Бесплатный тир |
