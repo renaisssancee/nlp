@@ -135,9 +135,9 @@
 ## 3. Данные и качество знаний
 
 > Данные публичные, PII отсутствует. Отправка текстов в OpenAI API допустима.
-> https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata
 
 ### 3.1 Сбор и предобработка данных
+Данные: https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata(датасет TMDB 5000 - kaggle)
 
 **Шаги пайплайна (`scripts/ingest.py`):**
 
