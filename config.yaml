@@ -1,0 +1,35 @@
+embedding_model: "all-MiniLM-L6-v2"
+reranker_model: "cross-encoder/ms-marco-MiniLM-L-6-v2"
+llm_model: "nvidia/nemotron-3-super-120b-a12b:free"
+fallback_models:
+  - "deepseek/deepseek-chat-v3-0324:free"
+  - "google/gemma-3-27b-it:free"
+  - "meta-llama/llama-4-maverick:free"
+openrouter_base_url: "https://openrouter.ai/api/v1"
+
+chroma_db_path: "chroma_db"
+chroma_collection: "movies"
+chroma_distance: "cosine"
+
+retrieval:
+  n_results: 20
+  top_k: 5
+  min_results_with_filter: 5
+  similarity_threshold: 0.4
+
+query_analyzer:
+  max_retries: 2
+  backoff_base_seconds: 2
+
+generation:
+  max_retries: 2
+  backoff_base_seconds: 2
+  history_turns: 2
+
+data:
+  raw_path: "data/raw"
+  processed_path: "data/processed"
+  movies_file: "data/processed/movies.jsonl"
+
+logging:
+  db_path: "data/logs.db"
