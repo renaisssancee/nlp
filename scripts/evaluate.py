@@ -40,8 +40,7 @@ def evaluate_genre_recall(result: dict, expected_genres: list[str]) -> float:
         return 0.0
     hits = 0
     for movie in result["movies"]:
-        title = movie.get("title", "").lower()
-        if any(g.lower() in str(result).lower() for g in expected_genres):
+        if any(g.lower() in str(movie).lower() for g in expected_genres):
             hits += 1
             break
     return 1.0 if hits > 0 else 0.0
@@ -132,7 +131,7 @@ def main():
         if result["type"] != expected_type:
             if expected_type == "recommendation" and result["type"] == "no_results":
                 metrics["hallucination_count"] += 1
-                print(f"  MISS: expected recommendations, got no_results")
+                print("  MISS: expected recommendations, got no_results")
 
         if expected_genres and result["type"] == "recommendation":
             recall = evaluate_genre_recall(result, expected_genres)
