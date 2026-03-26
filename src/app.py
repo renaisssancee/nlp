@@ -7,12 +7,12 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-import streamlit as st
-from dotenv import load_dotenv
+import streamlit as st  # noqa: E402
+from dotenv import load_dotenv  # noqa: E402
 
 load_dotenv(PROJECT_ROOT / ".env")
 
-from src.rag import CineMatchRAG
+from src.rag import CineMatchRAG  # noqa: E402
 
 st.set_page_config(page_title="CineMatch", page_icon="🎬", layout="centered")
 

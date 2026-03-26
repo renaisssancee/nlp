@@ -20,7 +20,7 @@ load_dotenv(PROJECT_ROOT / ".env")
 with open(PROJECT_ROOT / "config.yaml") as f:
     config = yaml.safe_load(f)
 
-from src.rag import CineMatchRAG
+from src.rag import CineMatchRAG  # noqa: E402
 
 TEST_QUERIES_FILE = PROJECT_ROOT / "data" / "test_queries.jsonl"
 

@@ -10,7 +10,7 @@ from sentence_transformers import SentenceTransformer
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-import yaml
+import yaml  # noqa: E402
 
 with open(PROJECT_ROOT / "config.yaml") as f:
     config = yaml.safe_load(f)
